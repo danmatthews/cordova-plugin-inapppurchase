@@ -30,17 +30,9 @@ utils.errors = {
 };
 
 utils.validArrayOfStrings = function (val) {
-
-  var containsIllegal = false;
-
-  for (var i in val) {
-    if (!i.length || typeof i !== 'string') {
-      containsIllegal = true;
-      break;
-    }
-  }
-
-  return val && Array.isArray(val) && val.length > 0 && !containsIllegal;
+  return val && Array.isArray(val) && val.length > 0 && !val.every(function (i) {
+    return !i.length || typeof i !== 'string';
+  });
 };
 
 utils.validString = function (val) {

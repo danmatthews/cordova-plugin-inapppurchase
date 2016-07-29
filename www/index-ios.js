@@ -20,7 +20,7 @@ utils.errors = {
 };
 
 utils.validArrayOfStrings = function (val) {
-  return val && Array.isArray(val) && val.length > 0 && !val.find(function (i) {
+  return val && Array.isArray(val) && val.length > 0 && !val.every(function (i) {
     return !i.length || typeof i !== 'string';
   });
 };
