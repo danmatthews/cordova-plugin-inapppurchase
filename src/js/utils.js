@@ -18,7 +18,7 @@ utils.errors = {
 };
 
 utils.validArrayOfStrings = (val) => {
-  return (val && Array.isArray(val) && val.length > 0 && !val.find(i => !i.length || typeof i !== 'string'));
+  return (val && Array.isArray(val) && val.length > 0 && !val.every(i => !i.length || typeof i !== 'string'));
 };
 
 utils.validString = (val) => {
